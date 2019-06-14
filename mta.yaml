@@ -1,0 +1,25 @@
+ID: ScreeningNoDB
+_schema-version: "2.1"
+version: 0.0.1
+modules:
+  
+  - name: ScreeningNoDB-srv
+    type: nodejs
+    path: srv
+    parameters:
+      memory: 512M
+      disk-quota: 256M
+    provides:
+      - name: srv_api
+        properties:
+          url: ${default-url}
+    requires:
+      - name: mydestination
+
+resources:
+  - name: mydestination
+    parameters:
+      service: destination
+      service-plan: lite
+    type: org.cloudfoundry.existing-service
+
