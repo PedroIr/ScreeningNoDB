@@ -77,6 +77,7 @@ function updatevalues() {
 					nameOfReq.push(oDataLocale[key].externalTitle);
 				}
 				
+				
 				var countReq={}, countOrder={};
 				for(var key2 in oDataQuestions){
 					if(oDataQuestions[key2].locale==="en_US"){
